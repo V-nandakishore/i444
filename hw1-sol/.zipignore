@@ -1,0 +1,7 @@
+*hw1-tests.ts
+*node_modules/*
+*dist/*
+.gitignore
+.zipignore
+*~
+*.bak
