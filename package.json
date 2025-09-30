@@ -1,5 +1,29 @@
 {
   "devDependencies": {
-    "@types/chai": "^5.2.2"
+    "@types/chai": "^5.2.2",
+    "@types/node": "^24.6.0",
+    "@types/semver": "^7.7.1",
+    "chai": "^6.2.0",
+    "mockdate": "^3.0.5",
+    "mongodb-memory-server": "^10.2.1",
+    "shx": "^0.4.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "cs444-js-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-js-utils-0.0.1.tgz",
+    "cs444-node-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-node-utils-0.0.1.tgz",
+    "mongo": "^0.1.0",
+    "mongodb": "^6.20.0"
+  },
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "dist-clean": "shx rm -rf dist node_modules package-lock.json",
+    "build": "npx tsc",
+    "postbuild": "shx test -e dist/index.js && shx chmod a+x dist/index.js || true",
+    "watch": "tsc --watch",
+    "pretest": "npm run build",
+    "test": "node dist/test/tst-*.js",
+    "predebug-test": "npm run build",
+    "debug-test": "node --inspect-brk dist/test/tst-*.js"
   }
 }
