@@ -148,7 +148,6 @@ export class ChatDao {
         );
       }
 
-      // Convert _id back to id
       const user: T.User = {
         id: dbUser._id,
         chatName: dbUser.chatName,
@@ -188,7 +187,6 @@ export class ChatDao {
         );
       }
 
-      // Convert _id back to id
       const user: T.User = {
         id: result._id,
         chatName: result.chatName,
@@ -344,19 +342,19 @@ export class ChatDao {
         userId = userResult.val.id;
       }
 
-      const dbFindParam: any = {
+      const dbFindParams: any = {
         roomId: roomResult.val.id,
       };
-      if (userId) dbFindParam.userId = userId;
-      if (findParams.id) dbFindParam.id = findParams.id;
-      if (findParams.words) dbFindParam.words = findParams.words;
-      if (findParams.earliest) dbFindParam.earliest = findParams.earliest;
-      if (findParams.latest) dbFindParam.latest = findParams.latest;
+      if (userId) dbFindParams.userId = userId;
+      if (findParams.id) dbFindParams.id = findParams.id;
+      if (findParams.words) dbFindParams.words = findParams.words;
+      if (findParams.earliest) dbFindParams.earliest = findParams.earliest;
+      if (findParams.latest) dbFindParams.latest = findParams.latest;
       if (findParams.offset !== undefined)
-        dbFindParam.offset = findParams.offset;
-      if (findParams.limit !== undefined) dbFindParam.limit = findParams.limit;
+        dbFindParams.offset = findParams.offset;
+      if (findParams.limit !== undefined) dbFindParams.limit = findParams.limit;
 
-      const dbMsgsResult = await this.findChatMsgsWithIds(dbFindParam);
+      const dbMsgsResult = await this.findChatMsgsWithIds(dbFindParams);
       if (!dbMsgsResult.isOk) return dbMsgsResult.into<T.ChatMsg[]>();
 
       const chatMsgs: T.ChatMsg[] = [];
