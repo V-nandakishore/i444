@@ -1,23 +1,23 @@
 #!/usr/bin/env bun
 
 //using node produces too much noise
-//#!/usr/bin/env -S node --experimental-strip-types 
+//#!/usr/bin/env -S node --experimental-strip-types
 
 import assert from "node:assert";
-import FNS from './hw1-sol.ts';
+import FNS from "./hw1-sol.ts";
 
 type TestCase = {
-  args: any[],
-  result: any,
+  args: any[];
+  result: any;
 };
 
 type FnTests = {
-  fn: Function,
-  tests: TestCase[],
+  fn: Function;
+  tests: TestCase[];
 };
 
 // remove comments for fn tests when that fn is implemented
-const FN_TESTS = [
+const FN_TESTS: any[] = [
   /*
   { fn: FNS.sortStrChars,
     tests: [
@@ -238,25 +238,26 @@ const FN_TESTS = [
   */
 ];
 
-function go(args) {
+function go(args: any) {
   let nErrors = 0;
   const isVerbose = args.length > 0;
-  const out = isVerbose ? console.log : (...args) => {};
+  const out = isVerbose ? console.log : (...args: any[]) => {};
   for (const { fn, tests } of FN_TESTS) {
     out(`BEGIN ${fn.name}()`);
     for (const { args, result: expected } of tests) {
       const actual = fn.apply(null, args);
       const argsStr = args
-	.map(a => (typeof a === 'function') ? a.toString() : JSON.stringify(a))
-	.join(', ');
-      const msg = `${fn.name}(${argsStr})`
+        .map((a) =>
+          typeof a === "function" ? a.toString() : JSON.stringify(a)
+        )
+        .join(", ");
+      const msg = `${fn.name}(${argsStr})`;
       try {
-	assert.deepEqual(actual, expected, msg);
-	out(`    ok: ${msg}`);
-      }
-      catch (_) {
-	out(`  fail: ${msg}`);
-	nErrors++;
+        assert.deepEqual(actual, expected, msg);
+        out(`    ok: ${msg}`);
+      } catch (_) {
+        out(`  fail: ${msg}`);
+        nErrors++;
       }
     }
   }

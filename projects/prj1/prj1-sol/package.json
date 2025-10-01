@@ -25,5 +25,6 @@
     "test": "node dist/test/tst-*.js",
     "predebug-test": "npm run build",
     "debug-test": "node --inspect-brk dist/test/tst-*.js"
-  }
+  },
+  "type": "module"
 }
