@@ -1,0 +1,48 @@
+{
+  "name": "prj1-sol",
+  "version": "0.0.1",
+  "main": "dist/main.js",
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "dist-clean": "shx rm -rf dist node_modules package-lock.json",
+    "build": "npx tsc",
+    "postbuild": "shx test -e dist/index.js && shx chmod a+x dist/index.js || true",
+    "watch": "tsc --watch",
+    "prepack": "npm run clean && npm run build",
+    "postpack": "shx mv *.tgz ..",
+    "pretest": "npm run build",
+    "test": "node --test dist/test/tst-*.js",
+    "pretest-only": "npm run build",
+    "test-only": "node --test --test-only dist/test/tst-*.js",
+    "predebug-test": "npm run build",
+    "debug-test": "node --inspect-brk dist/test/tst-*.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cs444-js-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-js-utils-0.0.2.tgz",
+    "cs444-node-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-node-utils-0.0.1.tgz",
+    "express": "^5.1.0",
+    "http-status": "^2.1.0",
+    "mongodb": "^6.19.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "@types/semver": "^7.7.1",
+    "@types/supertest": "^6.0.3",
+    "chai": "^6.0.1",
+    "mockdate": "^3.0.5",
+    "mongodb-memory-server": "^10.2.0",
+    "shx": "^0.4.0",
+    "supertest": "^7.1.4",
+    "typescript": "^5.9.2"
+  }
+}

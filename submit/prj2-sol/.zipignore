@@ -1,0 +1,9 @@
+*node_modules/*
+*dist/*
+*data/*
+*src/test/*
+.gitignore
+.zipignore
+*~
+*.bak
+*.discarded

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/",
+    "outDir": "./dist",
+    "allowJs": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "lib": [
+      "esnext", "dom", "dom.iterable",
+    ],
+    "pretty": false,
+    "baseUrl": ".",
+    "target": "esnext",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": true,
+    "pretty": false,
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "./src/"
+  ]
+}

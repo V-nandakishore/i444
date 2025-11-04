@@ -1,0 +1,4 @@
+{ "roomName": "js",
+  "chatName": "joe",
+  "msg": "Don't use ==, use === instead.  Actually JS rocks!"
+}

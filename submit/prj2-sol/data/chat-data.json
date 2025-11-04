@@ -1,0 +1,41 @@
+{
+  "users": [
+    { "firstName": "joe",
+      "lastName": "doe",
+      "email": "joe@zzz.com",
+      "chatName": "joe"
+    },
+    { "firstName": "jane",
+      "lastName": "doe",
+      "email": "jane@zzz.com",
+      "chatName": "jane"
+    }
+  ],
+  "rooms": [
+    { "roomName": "typescript",
+      "descr": "All things typescript"
+    }
+  ],
+  "msgs": [
+    { "roomName": "typescript",
+      "chatName": "joe",
+      "msg": "It's a great day here; high of 70 and sunny"
+    },
+    { "roomName": "typescript",
+      "chatName": "jane",
+      "msg": "It's freezing here!! Waht do you know about type narrowing?"
+    },
+    { "roomName": "typescript",
+      "chatName": "joe",
+      "msg": "Not too much ... conditions help the compiler infer types?"
+    },
+    { "roomName": "typescript",
+      "chatName": "joe",
+      "msg": "Do you understand how one can program with types in TS?"
+    },
+    { "roomName": "typescript",
+      "chatName": "jane",
+      "msg": "Functional programming with types as fns and generics as params"
+    }    
+  ]
+}
