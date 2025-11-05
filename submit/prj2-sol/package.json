@@ -24,7 +24,7 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "cs444-js-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-js-utils-0.0.2.tgz",
+    "cs444-js-utils": "file:../../../cs444-js-utils-0.0.2.tgz",
     "cs444-node-utils": "https://sunybing:sunybing@zdu.binghamton.edu/cs444/lib/cs444-node-utils-0.0.1.tgz",
     "express": "^5.1.0",
     "http-status": "^2.1.0",
